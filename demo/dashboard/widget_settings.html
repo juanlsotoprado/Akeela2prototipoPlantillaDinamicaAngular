@@ -1,0 +1,59 @@
+<div>
+    <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
+            <h3>Configurar elemento</h3>
+        </div>
+
+        <div class="modal-body">
+            <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
+                <label class="control-label col-lg-3 col-md-3">Nombre</label>
+                <div class="col-lg-9 col-md-9">
+                    <input  name="name" type="text" ng-model="form.name" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="form-group" ng-class="{error: _form.sizeX.$error && _form.submitted}">
+                        <label class="control-label col-lg-6 col-md-6">Ancho</label>
+                        <div class="col-lg-6 col-md-6">
+                            <input name="sizeX" ng-model="form.sizeX" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-lg-6 col-md-6">Alto</label>
+                        <div class="col-lg-6 col-md-6">
+                            <input name="sizeY" ng-model="form.sizeY" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="form-group" ng-class="{error: _form.sizeX.$error && _form.submitted}">
+                        <label class="control-label col-lg-6 col-md-6">Columas</label>
+                        <div class="col-lg-6 col-md-6">
+                            <input name="col" ng-model="form.col" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-lg-6 col-md-6">Filas</label>
+                        <div class="col-lg-6 col-md-6">
+                            <input name="row" ng-model="form.row" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>Eliminar</a>
+            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>Cancelar</a>
+            <button type="submit" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-ok"></i>Guardar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,47 @@
+<div class="page-header">
+	<a class="pull-right btn btn-success" ng-click="addWidgetTitulo()"><i
+		class="glyphicon glyphicon-plus"></i>Añadir elemento akeela titulo</a> 
+	<a class="pull-right btn btn-success" ng-click="addWidgetAkeela()"><i
+		class="glyphicon glyphicon-plus"></i>Añadir elemento Akeela</a>	
+		<a
+		class="pull-right btn btn-primary" ng-click="addWidget()"><i
+		class="glyphicon glyphicon-plus"></i>Añadir elemento base</a> <a
+		class="pull-right btn btn-warning" ng-click="clear()"><i
+		class="glyphicon glyphicon-trash"></i> Clear</a>
+	<h1 style="display: inline-block;">Akeela</h1>
+	<h3 style="color: #777">2 Prototipo de plantilla dinamica.</h3>
+
+</div>
+<div style="background: url('dist/cal.jpg'); min-height: 700px"
+	gridster="gridsterOptions">
+	<ul>
+		<li gridster-item="widget" ng-repeat="widget in dashboard.widgets">
+			<div class="box" ng-controller="CustomWidgetCtrl">
+
+				<div style="width: 100%; padding-top: 10px; padding-right: 10px;">
+				<div ng-if="widget.type != 'default'" style="color:#76a0d3;float: left;">
+<i class="fa fa-slack" aria-hidden="true"></i>
+					{{widget.name}}
+				</div>
+					<span style="float: right;"> <a title="settings"
+						ng-click="openSettings(widget)"><i class="fa fa-cog "></i></a> <arrastrar>
+						<a title="Mover"><i class="fa fa-th" aria-hidden="true"></i></a></arrastrar>
+					</span>
+				</div>
+<hr>
+				<div style="text-align: center; margin-top: -5px;" ng-if="widget.type == 'default'">
+				</div>
+
+				<div style="text-align: center;width: 100%;margin-top: -5px;" ng-if="widget.type == 'akeelaElement'">
+					<h4 style="color: #777;">Primer Nombre</h4>
+				</div>
+
+				<div style="margin-top: -10px;" ng-if="widget.type == 'title'">
+					<input type="text" style="width: 100%" />
+				</div>
+
+			</div>
+		</li>
+	</ul>
+
+</div>
